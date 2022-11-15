@@ -18,11 +18,9 @@ class Sprite {
   Sprite(const Sprite&& other);
   virtual ~Sprite();
 
-  Rect rect;
+  Transform transform;
 
   void Destroy();
-
-  // void SetImage(const std::string& path);
 
   void Render(SDL_Renderer* renderer);
 };

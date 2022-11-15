@@ -12,14 +12,14 @@ Sprite::Sprite(const Sprite& other) {
   Destroy();
   path = other.path;
   tex = other.tex;
-  rect = other.rect;
+  transform = other.transform;
 }
 
 Sprite::Sprite(const Sprite&& other) {
   Destroy();
   path = other.path;
   tex = other.tex;
-  rect = other.rect;
+  transform = other.transform;
 }
 
 // void SetImage(const std::string& path);
@@ -63,5 +63,5 @@ void Sprite::init(SDL_Renderer* renderer) {
 }
 
 void Sprite::Render(SDL_Renderer* renderer) {
-  SDL_RenderCopy(renderer, tex, NULL, rect.AsSDLRect());
+  SDL_RenderCopyEx(renderer, tex, NULL, transform.AsSDLRect(), 70, transform.Center(), SDL_FLIP_NONE);
 }
