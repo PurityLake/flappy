@@ -1,29 +1,30 @@
 #ifndef __FLAPPY_SPRITE_HPP__
 #define __FLAPPY_SPRITE_HPP__
 
-#include <string>
-
-#include <SDL.h>
-#include <SDL2/SDL_image.h>
+#include "flappy.hpp"
 
 class Sprite {
-private:
-    SDL_Rect rect;
-    SDL_Texture *tex;
+ private:
+  std::string path;
+  SDL_Texture* tex;
 
-    void init(SDL_Renderer *renderer, const std::string& path);
+  void init(SDL_Renderer* renderer);
 
-public:
-    Sprite();
-    Sprite(SDL_Renderer *renderer, const std::string& path);
-    // Sprite(std::string&& path);
-    // Sprite(const Sprite& other);
-    // Sprite(const Sprite&& other);
-    virtual ~Sprite();
+ public:
+  Sprite();
+  Sprite(SDL_Renderer* renderer, const std::string& path);
+  Sprite(SDL_Renderer* renderer, std::string&& path);
+  Sprite(const Sprite& other);
+  Sprite(const Sprite&& other);
+  virtual ~Sprite();
 
-    // void SetImage(const std::string& path);
-    
-    void Render(SDL_Renderer *renderer);
+  Rect rect;
+
+  void Destroy();
+
+  // void SetImage(const std::string& path);
+
+  void Render(SDL_Renderer* renderer);
 };
 
 #endif /* __FLAPPY_SPRITE_HPP__ */

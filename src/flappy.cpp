@@ -3,9 +3,19 @@
 #include "sprite.hpp"
 
 int main(int argc, char* argv[]) {
+  --argc;
+  ++argv;
+
+  int windowWidth = 640;
+  int windowHeight = 480;
+
+  if (argc == 2) {
+    windowWidth = atoi(argv[0]);
+    windowHeight = atoi(argv[1]);
+  }
+
   SDL_Window* window;
   SDL_Renderer* renderer;
-  SDL_Surface* surface;
   SDL_Event event;
 
   if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -14,8 +24,8 @@ int main(int argc, char* argv[]) {
     return 3;
   }
 
-  if (SDL_CreateWindowAndRenderer(320, 240, SDL_WINDOW_RESIZABLE, &window,
-                                  &renderer)) {
+  if (SDL_CreateWindowAndRenderer(windowWidth, windowHeight,
+                                  SDL_WINDOW_RESIZABLE, &window, &renderer)) {
     SDL_LogError(SDL_LOG_CATEGORY_APPLICATION,
                  "Couldn't create window and renderer: %s", SDL_GetError());
     return 3;
@@ -28,7 +38,11 @@ int main(int argc, char* argv[]) {
     return 3;
   }
 
-  Sprite s{ renderer, "assets/sprites/flapper.png" };
+  Sprite s{renderer, "assets/sprites/flapper.png"};
+  s.rect.x = 30;
+  s.rect.y = 40;
+  s.rect.w = 64;
+  s.rect.h = 64;
 
   while (1) {
     SDL_PollEvent(&event);
@@ -37,7 +51,7 @@ int main(int argc, char* argv[]) {
     }
     SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0x00);
     SDL_RenderClear(renderer);
-    
+
     s.Render(renderer);
 
     SDL_RenderPresent(renderer);
