@@ -6,7 +6,7 @@
 #include <SDL.h>
 #include <SDL2/SDL_image.h>
 
-#include "transform.hpp"
 #include "sprite.hpp"
+#include "transform.hpp"
 
 #endif /* __FLAPPY_HPP__ */
