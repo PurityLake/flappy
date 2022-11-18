@@ -2,6 +2,7 @@
 #define __FLAPPY_SPRITE_HPP__
 
 #include "flappy.hpp"
+#include "transform.hpp"
 
 class Sprite {
  private:

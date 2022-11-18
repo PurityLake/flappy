@@ -20,8 +20,8 @@ struct Transform {
   }
 
   SDL_Point* Center() {
-    center.x = rect.x + rect.w / 2.0f;
-    center.y = rect.y + rect.h / 2.0f;
+    center.x = w / 2.0f;
+    center.y = h / 2.0f;
     return &center;
   }
 

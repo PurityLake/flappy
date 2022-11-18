@@ -1,10 +1,10 @@
 project('flappy', 'cpp',
   version : '0.1',
-  default_options: 'defauly_library=static',
+  default_options: 'default_library=static',
   default_options : ['warning_level=3'])
 
 sources = [
-  'src/flappy.cpp', 'src/sprite.cpp'
+  'src/main.cpp', 'src/sprite.cpp'
 ]
 
 includes = [
