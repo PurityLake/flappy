@@ -39,10 +39,10 @@ int main(int argc, char* argv[]) {
   }
 
   Sprite s{renderer, "assets/sprites/flapper.png"};
-  s.rect.x = 30;
-  s.rect.y = 40;
-  s.rect.w = 64;
-  s.rect.h = 64;
+  s.transform.x = 30;
+  s.transform.y = 40;
+  s.transform.w = 64;
+  s.transform.h = 64;
 
   while (1) {
     SDL_PollEvent(&event);
