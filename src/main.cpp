@@ -1,5 +1,5 @@
 #include <string>
-
+#
 #include "bird.hpp"
 
 int main(int argc, char* argv[]) {
@@ -39,7 +39,6 @@ int main(int argc, char* argv[]) {
   }
 
   Bird bird{renderer};
-  bird.GetTransform().rot = 70;
 
   while (1) {
     SDL_PollEvent(&event);
@@ -53,7 +52,7 @@ int main(int argc, char* argv[]) {
 
     SDL_RenderPresent(renderer);
 
-    bird.Update(0.1f);
+    //bird.Update(0.1f);
   }
 
   SDL_DestroyRenderer(renderer);

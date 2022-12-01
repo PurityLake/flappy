@@ -12,8 +12,9 @@ includes = [
 ]
 
 dependencies = [
-  dependency('sdl2'),
-  dependency('sdl2_image', static: true)
+  dependency('sdl2', static: true),
+  dependency('sdl2_image', static: true),
+  dependency('libpng', static: true)
 ]
 
 exe = executable('flappy',
