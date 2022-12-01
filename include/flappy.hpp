@@ -10,7 +10,4 @@
 # include <SDL2/SDL_image.h>
 #endif
 
-#include "transform.hpp"
-#include "sprite.hpp"
-
 #endif /* __FLAPPY_HPP__ */

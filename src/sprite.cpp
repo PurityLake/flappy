@@ -63,5 +63,6 @@ void Sprite::init(SDL_Renderer* renderer) {
 }
 
 void Sprite::Render(SDL_Renderer* renderer) {
-  SDL_RenderCopyEx(renderer, tex, NULL, transform.AsSDLRect(), 70, transform.Center(), SDL_FLIP_NONE);
+  SDL_RenderCopyEx(renderer, tex, NULL, transform.AsSDLRect(), transform.rot,
+                   transform.Center(), SDL_FLIP_NONE);
 }
